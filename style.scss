@@ -1,0 +1,209 @@
+@charset "UTF-8";
+
+@import url(/dist/icons/css/iconmonstr-iconic-font.min.css);
+
+@font-face {
+	font-family: "Commissioner";
+	src: url(/dist/fonts/Commissioner-VariableFont_wght.ttf);
+	font-display: swap;
+}
+
+// COLOR PALLET
+
+$border-color: #bbe1fa;
+$theme-color: #0f4c75;
+$f-color: #1b262c;
+$second-bg-color: #fff;
+
+/* BODY */
+
+* {
+	margin: 0%;
+	box-sizing: border-box;
+}
+
+::selection {
+	background-color: $border-color;
+	color: $theme-color;
+}
+
+body {
+	font: {
+		size: 105%;
+		family: "Commissioner", sans-serif;
+	}
+
+	color: $f-color;
+	line-height: 1.8em;
+}
+
+.content-body {
+	margin: 0em auto;
+	max-width: 45em;
+	padding: 1em;
+	border: 5px solid $border-color;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: $theme-color;
+	line-height: 2em;
+}
+
+/* HEADER */
+
+h1 {
+	display: inline;
+	color: $theme-color;
+	font-weight: 900;
+	font-size: 3.5em;
+}
+
+.im-star-half {
+	display: inline;
+	font-size: 3.2em;
+	position: relative;
+	bottom: -5px;
+	font-weight: 600;
+	color: $theme-color;
+}
+
+.title {
+	font-size: 1.8vh;
+	line-height: 2em;
+	text-transform: uppercase;
+	text-align: center;
+
+	&__tag-line {
+	font-weight: 580;
+	font-size: 1.2em;
+	line-height: 1em;
+	word-spacing: .2em;
+	}
+}
+
+img {
+	margin: {
+		top: 2em;
+		bottom: .3em;
+	}
+	width: 43em;
+	max-width: 100%;
+	filter: sepia(100%) hue-rotate(190deg) saturate(400%);
+}
+
+/* CONTACT-LINKS */
+
+a {
+	color: $theme-color;
+	text-decoration: none;
+}
+
+.contact-links {
+	text-align: center;
+	margin: 1em 0;
+
+	&__social-media {
+		background: $theme-color;
+		color: $second-bg-color;
+		padding: 0.4em;
+		font-weight: bold;
+		font-size: 1.5em;
+		border-radius: 10px;
+		margin: 0.2em;
+		display: inline-block;
+	}
+
+	@mixin checked-buttons($button-id, $button-name, $button-info) {
+		#{$button-id} {
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+			font-size: 1em;
+			font-weight: bold;
+			padding: 0em;
+			color: $second-bg-color;
+
+			&:before {
+				content: "#{$button-name}";
+			}
+
+			&:checked:after {
+				content: "#{$button-info}";
+				color: $border-color;
+			}
+		}
+	}
+
+	@include checked-buttons("&__shop",
+		"Shop Address",
+		": To Get Address you have to contact us with given links"
+	);
+	@include checked-buttons("&__home",
+		"Home Service Available",
+		": To Get Home Repair go to the any given links"
+	);
+}
+
+label {
+	display: none;
+}
+
+/* ABOUT US */
+
+blockquote {
+	border-left: 10px solid $theme-color;
+	margin: 1em;
+	padding: 0.7em;
+}
+
+.about__tweet {
+	font-weight: bold;
+	font-size: 1.1em;
+}
+
+table {
+	border-collapse: collapse;
+	font-weight: 700;
+	width: 100%;
+	max-width: 100%;
+	text-align: center;
+	overflow: scroll;
+}
+
+td {
+	border: 5px solid $border-color;
+	padding: 0;
+}
+
+/* WHATSAPP ICON */
+
+.im-whatsapp {
+	$whatsapp-color: #25d366;
+	font-size: 3em;
+	position: sticky;
+	bottom: .5em;
+	left: 30em;
+	color: $second-bg-color;
+	background: $whatsapp-color;
+
+	border: {
+		top: 0.35em solid $whatsapp-color;
+		bottom: 0.15em solid $whatsapp-color;
+		left: 0.22em solid $whatsapp-color;
+		right: 0.21em solid $whatsapp-color;
+		radius: 100%;
+	}
+}
+
+/* FOOTER */
+
+footer {
+	text-align: center;
+	background-color: $border-color;
+	color: $f-color;
+	font-weight: 600;
+}
